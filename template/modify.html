@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no"/>
+	<link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<title>Modify Recipe</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-orange" id="more-recipes-navbar">
+<div class="container">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Brand -->
+    <a class="navbar-brand" href="#"><img src="images/more-recipes.jpg" class="img-fluid rounded" alt="More Recipe Logo"/></a>
+
+<!-- Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="nav-content">   
+            <ul class="navbar-nav">
+                    <li class="nav-item">
+                       <a class="nav-link" href="top-recipes.html">Top Recipes</a>
+                   </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="recipe-details.html">View Recipe</a>
+                   </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">Favorites</a>
+                    </li>
+                   <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                   </li>
+                    <li class="nav-item  active">
+                       <a class="nav-link" href="modify.html">Modify</a>
+                   </li>
+               </ul>  
+
+   
+</div>
+</nav>
+<section class="search-layout" style = "padding:auto;">
+    <div class="container">
+        <div style="max-width: 960px; margin-top:20px;">
+            <div class="row">
+             <form action="/html/tags/html_form_tag_action.cfm" id="register-form" class="col-sm-12">
+                <div class="container">
+                    <p class='h4' style="padding-bottom:25px">Create Recipe</p>
+                    <div class="form-group row">
+                        <label for="recipe-title" class="col-sm-2 col-form-label mr-2">Title: </label>
+                        <div class="col-sm-9">
+                        <input type="text" class="form-control" id="recipe-title" name="recipe_title" placeholder="Recipe Title">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="recipe-thumbnail" class="col-sm-2 col-form-label mr-2">Recipe Thumbnail: </label>
+                        <div class="col-sm-9">
+                        <input type="file" class="form-control" id="recipe-thumbnail" name="recipe_thumbnail">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Description" class="col-sm-2 col-form-label mr-2">Description: </label>
+                        <div class="col-sm-9">
+                        <textarea class="form-control" id="Description" name="Description" col="30" rows="10"> </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3" style="margin:auto;">
+                        <button type="submit" class="btn btn-default" style="">Add Recipe</button>
+                        </div>
+                    </div>
+                </div>
+             </form>
+             <table class="table">
+                <thead class="thead-default">
+                <tr>
+                    <th>S/N</th>
+                    <th>Recipe Title</th>
+                    <th>Thumbnail</th>
+                    <th>Description</th>
+                    <th colspan="2" style="text-align:center">Actions</th>
+                </tr>
+                </thead>
+                <!-- <tfoot>
+                <tr>
+                    <th>Footer 1</th>
+                    <th>Footer 2</th>
+                    <th>Footer 3</th>
+                </tr>
+                </tfoot> -->
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Spaghetti Salad</td>
+                    <td><img src="images/products/fun-to-eat-spaghetti-salad.jpg" class="rounded img-fluid" alt="Fun to eat Spaghetti Salad"></td>
+                    <td>Lorem is an example of fake sentence</td>
+                    <td><button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></td>
+                    <td><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Spaghetti Salad</td>
+                    <td><img src="images/products/fun-to-eat-spaghetti-salad.jpg" class="rounded img-fluid" alt="Fun to eat Spaghetti Salad"></td>
+                    <td>Lorem is an example of fake sentence</td>
+                    <td><button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></td>
+                    <td><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button></td></tr>
+                <tr>
+                    <td>3</td>
+                    <td>Spaghetti Salad</td>
+                    <td><img src="images/products/fun-to-eat-spaghetti-salad.jpg" class="rounded img-fluid" alt="Fun to eat Spaghetti Salad"></td>
+                    <td>Lorem is an example of fake sentence</td>
+                    <td><button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button></td>
+                    <td><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button></td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="bg-orange" style="padding-top:30px;">
+        <div class="container">
+                <div class="row">
+                <div class="col-sm-12"><p>Copyright &copy; 2017. All rights reserved.</p></div>
+                </div>  
+    </footer>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/myscript.js"></script>
+</body>
+</html>
