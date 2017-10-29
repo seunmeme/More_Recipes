@@ -6,6 +6,6 @@ export default (app) => {
   app.post('/api/recipes', Recipe.createRecipe);
   app.put('/api/recipes/:recipeId', Recipe.updateRecipes);
   app.delete('/api/recipes/:recipeId', Recipe.removeRecipes);
-  app.get('/api/recipes/:recipeId', Recipe.retrieveRecipes);
+  app.post('/api/recipes/:recipeId/reviews', Recipe.reviewRecipes);
 };
 

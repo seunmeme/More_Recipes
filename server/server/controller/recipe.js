@@ -1,4 +1,4 @@
-import recipes from '../models/recipe';
+import recipes from '../models/data';
 /**
  * @class Recipe
  */
@@ -17,14 +17,10 @@ class Recipe {
     recipes.push({
       id: recipes.length + 1,
       name: req.body.name,
-      upvotes: 0,
-      downvotes: 0,
-      favorited: 0,
-      views: 0,
-      description: req.body.description,
       image: req.body.image,
+      description: req.body.description,
       ingredients: req.body.ingredients,
-      directions: req.bodydirections,
+      directions: req.body.directions,
     });
     return res.json({
       message: 'success',
@@ -61,13 +57,14 @@ class Recipe {
       }
     }
     return res.status(404).json({
-      message: 'recipe not found',
+      message: 'Content not found',
       error: true
     });
   }
-  static retrieveRecipes(req, res) {
+  static reviewRecipes(req, res) {
     for (let i = 0; i < recipes.length; i += 1) {
       if (recipes[i].id === parseInt(req.params.recipeId, 10)) {
+        recipes[i].reviews.push({ reviews: req.body.content });
         return res.json({
           recipes: recipes[i],
           message: 'success',
@@ -76,7 +73,7 @@ class Recipe {
       }
     }
     return res.status(404).json({
-      message: 'recipe not found',
+      message: 'Content not found',
       error: true
     });
   }
