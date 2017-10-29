@@ -1,13 +1,13 @@
 {
-    "name": "server",
+    "name": "api_routes",
     "version": "1.0.0",
-    "description": "",
+    "description": "More recipes api",
     "main": "app.js",
     "scripts": {
         "start": "nodemon --watch server --exec babel-node -- server/bin/www",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Jason Ogaga",
+    "author": "Solomon Odewale",
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.18.2",
