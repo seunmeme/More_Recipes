@@ -1,7 +1,7 @@
 {
-    "name": "api_routes",
+    "name": "server",
     "version": "1.0.0",
-    "description": "More recipes api",
+    "description": "",
     "main": "app.js",
     "scripts": {
         "start": "nodemon --watch server --exec babel-node -- server/bin/www",
