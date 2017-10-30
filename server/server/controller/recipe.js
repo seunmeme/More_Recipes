@@ -7,9 +7,13 @@ class Recipe {
      * @returns {obj} recipes
      * @param {*} req
      * @param {*} res
+     * @param {*} next
      */
-  static getRecipe(req, res) {
-    return res.json({
+  static getRecipe(req, res, next) {
+    if (req.query.sort) {
+      next();
+    }
+    return res.status(200).json({
       recipes
     });
   }
@@ -17,10 +21,14 @@ class Recipe {
     recipes.push({
       id: recipes.length + 1,
       name: req.body.name,
-      image: req.body.image,
+      upvotes: 0,
+      downvotes: 0,
+      favorited: 0,
+      views: 0,
       description: req.body.description,
+      image: req.body.image,
       ingredients: req.body.ingredients,
-      directions: req.body.directions,
+      directions: req.bodydirections,
     });
     return res.json({
       message: 'success',
@@ -32,10 +40,11 @@ class Recipe {
       if (recipes[i].id === parseInt(req.params.recipeId, 10)) {
         recipes[i].name = req.body.name;
         recipes[i].description = req.body.description;
+        recipes[i].image = req.body.image;
         recipes[i].ingredients = req.body.ingredients;
         recipes[i].directions = req.body.directions;
         return res.json({
-          recipes: recipes[i],
+          recipes,
           message: 'success',
           error: false
         });
@@ -57,7 +66,7 @@ class Recipe {
       }
     }
     return res.status(404).json({
-      message: 'Content not found',
+      message: 'recipe not found',
       error: true
     });
   }
@@ -75,6 +84,12 @@ class Recipe {
     return res.status(404).json({
       message: 'Content not found',
       error: true
+    });
+  }
+  static sortRecipes(req, res) {
+    recipes.sort((b, a) => a.upvotes - b.upvotes);
+    return res.status(200).json({
+      message: recipes
     });
   }
 }

@@ -13,5 +13,9 @@ app.get('/', (req, res) => res.status(200).send({
   message: 'Connected!'
 }));
 
+app.get('/api', (req, res) => res.status(200).send({
+  message: 'Connected!'
+}));
+
 
 export default app;
