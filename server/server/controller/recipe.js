@@ -30,7 +30,7 @@ class Recipe {
       ingredients: req.body.ingredients,
       directions: req.bodydirections,
     });
-    return res.json({
+    res.status(200).json({
       message: 'success',
       error: false
     });
@@ -43,7 +43,7 @@ class Recipe {
         recipes[i].image = req.body.image;
         recipes[i].ingredients = req.body.ingredients;
         recipes[i].directions = req.body.directions;
-        return res.json({
+        res.status(200).json({
           recipes,
           message: 'success',
           error: false
@@ -59,7 +59,7 @@ class Recipe {
     for (let i = 0; i < recipes.length; i += 1) {
       if (recipes[i].id === parseInt(req.params.recipeId, 10)) {
         recipes.splice(i, 1);
-        return res.json({
+        return res.status(200).json({
           message: 'deleted',
           error: false
         });
@@ -74,7 +74,7 @@ class Recipe {
     for (let i = 0; i < recipes.length; i += 1) {
       if (recipes[i].id === parseInt(req.params.recipeId, 10)) {
         recipes[i].reviews.push({ reviews: req.body.content });
-        return res.json({
+        return res.status(200).json({
           recipes: recipes[i],
           message: 'success',
           error: false

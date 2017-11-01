@@ -1,4 +1,3 @@
-
 import Recipe from '../controller/recipe';
 
 export default (app) => {
@@ -9,4 +8,3 @@ export default (app) => {
   app.delete('/api/recipes/:recipeId', Recipe.removeRecipes);
   app.post('/api/recipes/:recipeId/reviews', Recipe.reviewRecipes);
 };
-
