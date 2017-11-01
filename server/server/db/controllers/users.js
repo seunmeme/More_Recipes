@@ -28,12 +28,13 @@ module.exports = {
         password: req.body.password,
       }
     })
-      .then((user) => {
-        if (user.password === req.body.password) {
+      .then((users) => {
+        if (users.password === req.body.password) {
           res.status(200).send({ message: 'You have successfully logged in.' });
         }
-        res.status(400).send({ error: 'Invalid username or password' });
-      });
+        res.status(400);
+      })
+      .catch(error => res.status(400).send({error: 'invalid username or password'}));
   },
 };
 
