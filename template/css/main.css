@@ -1,6 +1,6 @@
 .bg-orange
 {
-	background: #ffc614;
+	background: #5A464C;
 
 }
 #more-recipes-navbar.navbar-dark .navbar-brand{
@@ -17,7 +17,7 @@
 	color: #fff;
 }
 #more-recipes-navbar.navbar-dark .navbar-nav .nav-item.active .nav-link{
-	color: #000;
+	color: rgba(139, 190, 19, 0.767);
 }
 #more-recipes-navbar.navbar-dark .navbar-nav .nav-item.active .nav-link:hover,
 #more-recipes-navbar.navbar-dark .navbar-nav .nav-item.active .nav-link:focus{
