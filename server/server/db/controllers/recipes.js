@@ -1,35 +1,28 @@
-import bcrypt from 'bcrypt';
 import db from '../models/index';
 
-const saltRounds = 10;
 
-const { Users } = db;
+const { Recipes } = db;
 /**
  * @class User
  */
-class User {
+class Recipe {
   /**
-     * @returns {obj} users
+     * @returns {obj} recipe
      * @param {*} req
      * @param {*} res
      * @param {*} next
      */
-  static signup(req, res) {
-    bcrypt.hash(req.body.password, 10, (err, hash) => {
-      if (err) {
-        return res.status(500).send({ error: `an error occured ${err}` });
-      }
-      return Users
-        .create({
-          name: req.body.name,
-          username: req.body.username,
-          email: req.body.email,
-          password: hash,
-          confirmPassword: hash,
-        })
-        .then(users => res.status(201).send(users))
-        .catch(error => res.status(404).send(error));
-    });
+  static create(req, res) {
+    return Recipes
+      .create({
+        title: req.body.title,
+        image: req.body.image,
+        description: req.body.description,
+        ingredients: req.body.ingredients,
+        directions: req.body.directions,
+      })
+      .then(recipes => res.status(201).send(recipes))
+      .catch(error => res.status(404).send(error));
   }
   static signin(req, res) {
     if (!req.body.username) {
@@ -57,4 +50,4 @@ class User {
       .catch(error => res.status(400).send({ error: error.message }));
   }
 }
-export default User;
+export default Recipe;

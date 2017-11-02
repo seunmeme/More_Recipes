@@ -1,10 +1,10 @@
-{
-  "development": {
-    "username": "qdtlhcsb",
-    "password": "Fdlxpof8vKKnUUPQK51xhkI8BJ-p0WCf",
-    "database": "qdtlhcsb",
-    "host": "elmer.db.elephantsql.com",
-    "dialect": "postgres"
+module.exports = {
+  development: {
+    username: "qdtlhcsb",
+    password: "Fdlxpof8vKKnUUPQK51xhkI8BJ-p0WCf",
+    database: "qdtlhcsb",
+    host: "elmer.db.elephantsql.com",
+    dialect: "postgres"
   },
   "test": {
     "username": "root",
