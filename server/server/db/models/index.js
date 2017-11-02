@@ -2,10 +2,14 @@ import fs from 'fs';
 import path from 'path';
 import Sequelize from 'sequelize';
 
+import bcrypt from 'bcrypt';
+
+const saltRounds = 10;
+
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
 
-const config = require('../config/config.json')[env];
+const config = require('../config/config.js')[env];
 
 const db = {};
 
