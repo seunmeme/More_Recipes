@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+
     },
     username: {
       type: DataTypes.STRING,
@@ -25,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Users.associate = (models) => {
     Users.hasMany(models.Recipes, {
-      foreignKey: 'userId',
+      foreignKey: 'name',
       as: 'recipes',
     });
     Users.hasMany(models.Favorites, {

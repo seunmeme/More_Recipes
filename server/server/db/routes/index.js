@@ -9,4 +9,5 @@ module.exports = (app) => {
   app.post('/api/users/signup', User.signup);
   app.post('/api/users/signin', User.signin);
   app.post('/api/recipes', Recipe.create);
+  app.get('/api/recipes', Recipe.list);
 };
